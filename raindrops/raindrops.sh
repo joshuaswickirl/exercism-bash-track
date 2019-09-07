@@ -4,23 +4,17 @@ set -o errexit
 
 main() {
   output=""
-  for i in {3,5,7};
-  do
-    if (( $1 % $i == 0 )); then
-      if (( $i == 3 )); then
-        output=$output"Pling"
-      elif (( $i == 5 )); then
-        output=$output"Plang"
-      elif (( $i == 7 )); then
-        output=$output"Plong"
-      fi
-    fi
-  done
-  if [[ -z "$output" ]]; then
-    echo $1
-  else
-    echo ${output}
+  if (( $1 % 3 == 0 )); then
+    output+="Pling"
   fi
+  if (( $1 % 5 == 0 )); then
+    output+="Plang"
+  fi
+  if (( $1 % 7 == 0 )); then
+    output+="Plong"
+  fi
+
+  echo ${output:-$1}
 }
 
 main "$@"
