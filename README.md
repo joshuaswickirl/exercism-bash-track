@@ -9,3 +9,4 @@ Exercism's Bash Track
 2. [Two Fer](/two-fer)
 3. [Error Handling](/error-handling)
 4. [Raindrops](/raindrops)
+5. [Hamming](/hamming)
